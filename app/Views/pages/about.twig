@@ -1,0 +1,275 @@
+{% extends "commun/base.html.twig" %} 
+
+{% block title %} 
+    A propos {{ parent() }} 
+{% endblock title %}
+
+{% block header %}
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title mdl-typography--text-center Montserrat">Oxygen</span>
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#about" class="mdl-layout__tab is-active">About</a>
+            <a href="#technical-infos" class="mdl-layout__tab">Infos</a>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title Montserrat">Oxygen Project</span>
+        <nav class="mdl-navigation">
+            
+            {% include "component/links.twig" %}
+        
+        </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="about">
+            <div class="page-content">
+
+{% endblock header %}
+
+
+{% block content %}
+
+<section class="section--block">
+    <h4 class="section-title">A propos ...</h4>
+    <p class="text">
+        <span class="bold">Oxygen</span> est libre, gratuit, Open source et le restera.<br> Nous encourageons l'amélioration,
+        la modification et le partage du code d'Oxygen selon la license
+        <a title="Licence publique générale GNU/GPL v3" href="https://www.gnu.org/licenses/gpl-3.0.fr.html">GNU/GPL v3</a>,
+        disponible gratuitement sur <a title="Github du projet Oxygen" href="">Github.com</a>.
+    </p>
+    <br>
+    <h4 class="section-title">Technologies</h4>
+    <p class="text">
+        <span class="bold">Oxygen</span> est codé en <a title="Hypertext Preprocessor" href="https://php.net/">PHP</a> couplé
+        avec l'excellent framework PHP <a title="Slim, a micro framework for PHP" href="https://www.slimframework.com/">Slim</a>
+        et avec le moteur de template <a title="Twig, the flexible, fast, and secure template engine for PHP" href="http://twig.sensiolabs.org/">Twig</a>
+        pour la génération des pages de ce projet ainsi que le framework CSS 
+        <a title="A front-end template that helps you build fast, modern mobile web apps." href="https://getmdl.io/">Material Design Lite</a>
+        Ce projet utilise le gestionnaire de dépendance <a title="Dependency Manager for PHP" href="https://getcomposer.org/">Composer</a>.
+    </p>
+    <br>
+    <h4 class="section-title">Remerciments</h4>
+    <p class="text">
+        Merci à toute la communauté et au forum d'<a title="OpenClassrooms" href="https://openclassrooms.com/">OpenClassrooms</a>
+        pour tous leurs précieux conseils, tutos et astuces sans qui ce projet n'aurait certainement pas vu le jour.
+    </p>
+    <br>
+    <figure class="big-i">
+        <i class="material-icons mdl-color-text--green">&#xE1E2;</i>
+    </figure>
+    <figcaption>
+        <p class="bold subtitle center mdl-color-text--green">Open source system<br>
+            <a title="Licence publique générale GNU" href="https://www.gnu.org/licenses/gpl-3.0.fr.html"> GNU GPLv3</a>
+        </p>
+    </figcaption>
+    <br><br><br>
+    <h4 class="mdl-typography--text-center">Licenses</h4>
+    <hr>
+    <br>
+    <p class="text little-margin">Cliquer sur le bouton ci-dessous pour afficher les licenses des logiciels, projets et codes que nous utilisons pour Oxygen.</p>
+    <br>
+    <button id="show-dialog" type="button" class="content-center mdl-button">License</button>
+    <dialog class="mdl-dialog">
+        <h5 class="mdl-dialog__title">License</h5>
+        <div class="mdl-dialog__content">
+            <a href="https://getmdl.io">
+                <h6>Material Design Lite</h6>
+            </a>
+            <br>
+            <code>
+                                            Copyright 2015, Google.<br>
+                                            <br>
+                                            Licensed under the Apache License, Version 2.0 (the "License");
+                                            you may not use this file except in compliance with the License.
+                                            You may obtain a copy of the License at<br>
+                                            <br>
+                                            http://www.apache.org/licenses/LICENSE-2.0<br>
+                                            <br>
+                                            Unless required by applicable law or agreed to in writing, software
+                                            distributed under the License is distributed on an "AS IS" BASIS,
+                                            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                            See the License for the specific language governing permissions and
+                                            limitations under the License.<br>
+                                            </code>
+            <br>
+            <hr>
+            <br>
+            <a href="http://twig.sensiolabs.org">
+                <h6>Twig</h6>
+            </a>
+            <br>
+            <code>
+                                            Copyright (c) 2009-2016 by the Twig Team.<br>
+                                            <br>
+                                            Some rights reserved.<br>
+                                            <br>
+                                            Redistribution and use in source and binary forms, with or without
+                                            modification, are permitted provided that the following conditions are
+                                            met:<br>
+                                            <br>
+                                            * Redistributions of source code must retain the above copyright
+                                            notice, this list of conditions and the following disclaimer.<br>
+                                            <br>
+                                            * Redistributions in binary form must reproduce the above
+                                              copyright notice, this list of conditions and the following
+                                              disclaimer in the documentation and/or other materials provided
+                                              with the distribution.<br>
+                                            <br>
+                                            * The names of the contributors may not be used to endorse or
+                                              promote products derived from this software without specific
+                                              prior written permission.<br>
+                                            <br>
+                                            THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+                                            "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+                                            LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+                                            A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+                                            OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+                                            SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+                                            LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+                                            DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+                                            THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+                                            (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+                                            OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br>
+                                            </code>
+            <br>
+            <hr>
+            <br>
+            <a href="https://slimframework.com">
+                <h6>Slim Framework</h6>
+            </a>
+            <br>
+            <code>
+                                            Copyright (c) 2011-2016 Josh Lockhart.<br>
+                                            <br>
+                                            Permission is hereby granted, free of charge, to any person obtaining a copy of this
+                                            software and associated documentation files (the "Software"), to deal in the Software
+                                            without restriction, including without limitation the rights to use, copy, modify, merge,
+                                            publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
+                                            to whom the Software is furnished to do so, subject to the following conditions:<br>
+                                            <br>
+                                            The above copyright notice and this permission notice shall be included in all copies or substantial
+                                            portions of the Software.<br>
+                                            <br>
+                                            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+                                            NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+                                            IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,                                                
+                                            WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+                                            OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br>
+                                            </code>
+            <br>
+            <hr>
+            <br>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close">J'ai tout lu !</button>
+        </div>
+    </dialog>
+</section>
+</div>
+</section>
+<section class="mdl-layout__tab-panel" id="technical-infos">
+    <div class="page-content">
+        <section class="section--block">
+            <h4 class="section-title">Informations</h4>
+            <p class="text">
+                Informations à propos de votre installation actuelle.<br> Ces informations peuvent servir dans le cadre d'un
+                déboguage ou d'un rapport d'erreur.
+            </p>
+            <br>
+            <ul class="list-infos mdl-list">
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE62A;</i>
+                                                Version actuelle:&nbsp;<code>{{ info.Oxygen.version }}</code>
+                                            </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE335;</i>
+                                                Type de version:&nbsp;<code>{{ info.Oxygen.release_type | capitalize }}</code>
+                                            </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE85A;</i>
+                                                Nom de la version:&nbsp;<code>"{{ info.Oxygen.release_name }}"</code>
+                                            </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE923;</i>
+                                                Date de sortie:&nbsp;<code>{{ info.Oxygen.release_date }}</code>
+                                            </span>
+                </li>
+                <br>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE153;</i>
+                                                Version de PHP:&nbsp;<code>{{ info.PHP.version }}</code>
+                                            </span>
+                </li>
+                {% if info.PHP.require %}
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon mdl-color-text--green">&#xE8E8;</i>
+                                                <span class="mdl-color-text--green">Votre version de PHP est optimale pour Oxygen. ( ≥ 7.0.0 )</span>
+                    </span>
+                </li>
+                {% else %}
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon mdl-color-text--red">&#xE14C;</i>
+                                                <span class="mdl-color-text--red">Votre version de PHP n'est pas otimale pour Oxygen. ( < 7.0.0 )</span>
+                    </span>
+                </li>
+                {% endif %}
+                <br>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE875;</i>
+                                                OS:&nbsp;<code>{{ info.env.OS }}</code>
+                                            </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE260;</i>
+                                                Version:&nbsp;<code>{{ info.env.version }}</code>
+                                            </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE30C;</i>
+                                                Hote:&nbsp;<code>{{ info.env.host|capitalize }}</code>
+                                            </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                                                <i class="material-icons mdl-list__item-icon">&#xE8C0;</i>
+                                                Architecture:&nbsp;<code>{{ info.env.arch }}</code>
+                                            </span>
+                </li>
+            </ul>
+            <br>
+        </section>
+    </div>
+</section>
+<script type="text/javascript">
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (!dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function () {
+        dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function () {
+        dialog.close();
+    });
+</script>
+
+{% endblock content %}

@@ -1,0 +1,68 @@
+{% extends "commun/base.html.twig" %} 
+
+{% block title %} 
+    Oxygen Project
+{% endblock title %}
+
+{% block content %}
+
+<section class="section--header mdl-color--teal">
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-typography--text-center  mdl-color-text--white">
+        <h1 class="Montserrat">Oxygen</h1>
+        <p class="subtitle little-margin">Breathe</p>
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+
+</section>
+
+<section class="section--block">
+
+    <div class="mdl-layout-spacer"></div>
+
+    <div class="mdl-typography--text-center mdl-color-text--grey-600">
+        <h3 class="Montserrat">Bonjour !</h3><br>
+        <p class="text">
+            
+            Nous sommes le {{ today.day|capitalize }} {{ today.number }} {{ today.month|capitalize }} {{ today.year }} en semaine {{
+            today.AorB|capitalize }}.<br><br> {% if today.passage_list != true %} Aucun passage n'est programmé
+            pour aujourd'hui.<br><br> Bonne journée ! {% else %} Un ordre de passage est défini pour aujourd'hui, connectez-vous
+            pour accéder au service.<br><br>
+            <div class="mdl-grid">
+                <div class="list-card-wide mdl-card mdl-cell--12-col mdl-shadow--8dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text center">Ordre de passage</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul class="demo-list-icon mdl-list">
+                            {% for x in today.passage_list %}
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content subtitle">
+                                                    <span class="mdl-color-text--blue bold">{{ loop.index }} -</span>&nbsp;{{
+                                today.passage_list[loop.index0] }}
+                                </span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-shadow--8dp mdl-color--deep-orange-A400">
+                                <span class="mdl-color-text--white">Se connecter</span>
+                            </button> {% endif %}
+        </p>
+    </div>
+
+    {% if today.passage_list != true %}
+    <img class="responsive" src="/Oxygen/bin/img/cat.png" alt="cat on windows" draggable="false">
+    {% endif %}
+
+    <div class="mdl-layout-spacer"></div>
+</section>
+
+{% endblock content %}
+
+

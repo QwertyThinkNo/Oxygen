@@ -1,0 +1,11 @@
+Version: 1.0.0-alpha1
+
+FUCTIONALITY:
+ ✔ @done Passage order list (configs/passageList.ini)
+ ✔ @done Actual passage (data/actualPassage.json)
+
+TODO:
+ ☐ @high Auth system (WIP)
+ ☐ @low "special day" when passage order is changed for only one day
+ ☐ @low settings.ini support
+ ☐ @low Multi-langs support

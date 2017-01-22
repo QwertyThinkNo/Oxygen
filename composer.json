@@ -1,0 +1,23 @@
+{
+    "name": "oxygen/oxygen",
+    "description": "A PHP program aimed to alert (distracted) students when their service in the canteen arrives, with a SMS on their smartphones. Edit",
+    "type": "project",
+    "license": "GPL-v3.0",
+    "authors": [
+        {
+            "name": "Corentin P."
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "slim/slim": "^3.7",
+        "slim/twig-view": "^2.1",
+        "slim/csrf": "^0.8.1",
+        "illuminate/database": "^5.3"
+    }
+}

@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat-Regular'), url('../fonts/Montserrat/Montserrat.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('../fonts/OpenSans/OpenSans.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url('../fonts/MaterialIcons/MaterialIcons.woff2') format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    user-select: none;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+p, h1, h2, h3, h4, h5, h6 {margin: 0;}
+
+.Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.OpenSans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*================================
+		 * SELECTION *
+================================*/
+
+::selection {
+    background: #8BC34A; /* WebKit/Blink Browsers */
+    color: white;
+}
+::-moz-selection {
+    background: #8BC34A; /* Gecko Browsers */
+    color: white;
+}
+
+/*================================
+		   * MDL-CARDS *
+================================*/
+
+.demo-card-wide.mdl-card {
+	width: 92%;
+	max-width: 512px;
+	margin: 25px auto;
+}
+
+.list-card-wide {
+    width: 92%;
+	max-width: 512px;
+    overflow: auto;
+	margin: 25px auto;
+}
+
+.demo-card-wide > .mdl-card__title {
+	color: #fff;
+	height: 180px;
+}
+
+.img-welcome {
+	background: url('../img/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+
+.img-cake {
+	background: url('../img/cake.jpg') center / cover;
+}
+
+.img-motion {
+	background: url('../img/material-motion.png') bottom right 15% no-repeat #8E4497;
+    background-size: 45%;
+}
+
+.img-wave {
+    background: url('../img/material-wave.png') center / cover;
+}
+
+.img-metaphor {
+    background: url('../img/material-metaphor.png') bottom right 15% no-repeat #b4E0E1;
+    background-size: 40%;
+}
+
+.img-square-addb {
+    background: url('../img/material-addb.png') center;
+}
+
+.demo-card-square.mdl-card {
+	min-width: 100px;
+	width: 90%;
+	max-width: 320px;
+	height: 320px;
+	margin: 5px auto;
+}
+
+.demo-card-square > .mdl-card__title {
+	color: #fff;
+}
+
+
+/*================================
+		 * CSS RULES *
+================================*/
+
+body {
+    margin: 0; /* pour éviter les marges */
+}
+
+section.section--header {
+    padding: 75px;
+}
+
+div.center-div {
+    margin: auto;
+    width: 95%;
+    max-width: 350px;
+    min-width: 328px;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+	margin-top: 50vh;
+  	transform: translateY(-50%);
+}
+
+section.section--block {
+    margin: 30px 25px;
+}
+
+p.subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em
+}
+
+.content-center {
+    display: flex;
+    margin: auto;
+}
+
+.little-margin {
+    margin: 2.5px;
+}
+
+.section-title {
+    margin: 5px 0 10px;
+    color: #616161;
+}
+
+p.text {
+    font-size: 1.15rem;
+}
+
+.demo-list-icon {
+    width: 200px;
+    margin: auto;
+}
+
+p#date_heure {
+    float: left;
+    margin: 3%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    color: #616161;
+    font-size: 1.8em;
+}
+
+.big-i {
+    display: flex;
+}
+
+.big-i > i{
+    font-size: 10em;
+	margin: auto;
+}
+
+.list-infos {
+    width: 96%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+img.responsive {
+    padding: 50px 0;
+	max-width: 300px;
+	height: auto;
+
+    display: flex;
+    margin: auto;
+
+    user-select: none;
+}
+
+/*================================
+		 * BALISE STYLE *
+================================*/
+
+hr {
+	margin: 0 4% 1px;
+	padding: 0;
+	height: 0.7px;
+	background: #9E9E9E;
+}
+
+/*================================
+		  * SHORTCUT *
+================================*/
+
+.bold {
+	font-weight: bold;
+}

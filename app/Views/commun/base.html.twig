@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+	<title>{% block title %}:: Oxygen{% endblock title %} 	</title>
+
+	<!-- Metas
+	============================================= -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="theme-color" content="A DEFINIR">
+
+	<!-- Favicon
+	============================================= -->{% block favicon %}
+		
+	<link rel="icon" type="image/png" href="/Oxygen/bin/img/favicon/oxygen_logo.png">
+	<!--[if IE]><link rel="icon" type="image/x-icon" href="/Oxygen/bin/img/favicon/oxygen_logo.ico"><![endif]-->
+	{% endblock favicon %}
+
+	<!-- Stylesheet
+	============================================= -->{% block stylesheet %}
+		
+	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/normalize/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/mdl/material.blue-deep_purple.min.css">
+	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/font-awesome/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/style.css">
+	{% endblock stylesheet %}
+
+	<!-- Scripts
+	============================================= -->{% block script %}
+	
+	<script defer src="/Oxygen/bin/js/mdl/material.min.js"></script>
+	{% endblock script %}
+
+	<!-- Style (if the page requires it)
+	============================================= -->{% block style %}
+	
+	{% endblock style %}
+
+</head>
+
+<body>
+
+{% block header %}
+{% include "component/header.twig" %}
+{% endblock header %}
+
+	{% block content %}
+	{% endblock content %}
+
+{% block footer %}
+{% include "component/footer.twig" %}
+{% endblock footer %}
+
+
+	</main>
+</div>
+
+
+
+</body>
+
+</html>
