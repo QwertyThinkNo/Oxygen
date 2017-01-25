@@ -1,0 +1,137 @@
+{% extends "commun/base.html.twig" %} 
+
+{% block title %} 
+    AdminBoard {{ parent() }}
+{% endblock title %}
+
+{% block content %}
+
+<section class="section--block">
+
+    <div class="card-text mdl-shadow--3dp">
+
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-lock" aria-hidden="true"></i> Admin Board</h4>
+        </div>
+
+        <div class=" mdl-card__supporting-text">
+
+            <p class="text">
+                Vous êtes actuellement dans la zone <span class="bold">Admin</span> d'Oxygen. Les parametres ci-dessus mal
+                configurés peuvent provoqué bugs, crash et erreurs du système.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- USERS OPTIONS -->
+
+    <div class="card-option mdl-shadow--3dp">
+        
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-user-plus" aria-hidden="true"></i> Nouvel utilisateur</h4>
+        </div>
+
+        <div class="mdl-card--border mdl-card__supporting-text">
+
+            <form action={{ path_for('admin') }} method="post" class="form-container" autocomplete="off">
+
+                    <div class="content-center mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input name="addUser:username" required class="mdl-textfield__input" type="text" id="new-username">
+                        <label class="mdl-textfield__label" for="new-username">Username</label>
+                    </div>
+
+                    <div class="content-center mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input name="addUser:password"  required class="mdl-textfield__input" type="new-password" id="new-password">
+                        <label class="mdl-textfield__label" for="new-password">Password</label>
+                    </div>
+
+                    <br>
+
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="admin">
+                        <input name="addUser:role" type="radio" id="admin" class="mdl-radio__button" value="admin" required>
+                        <span class="mdl-radio__label">Administrateur</span>
+                    </label>
+
+                     <br>
+                            
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="user">
+                        <input type="radio" id="user" class="mdl-radio__button" name="new-role" value="user">
+                        <span class="mdl-radio__label">Utilisateur</span>
+                    </label>
+                        
+                    {{ csrf.field | raw }}
+
+                    <br><br>
+
+                    <button type="submit" class="content-center mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Ajouter</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="card-option mdl-shadow--3dp">
+        
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Utilisateurs</h4>
+        </div>
+
+        <div class="mdl-card--border mdl-card__supporting-text">
+
+            <section class="container">
+  
+                <table style="margin:auto" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                        <th class="mdl-data-table__header--sorted-ascending">ID</th>
+                        <th class="mdl-data-table__cell--non-numeric">Username</th>
+                        <th class="mdl-data-table__cell--non-numeric">Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for x in auth.getUser %}
+                        <tr>
+                        <td class="bold">{{ auth.getUser[loop.index0]['id'] }}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{ auth.getUser[loop.index0]['username'] }}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{ auth.getUser[loop.index0]['role'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>  
+
+            <br>
+  
+            </section>       
+
+        </div>
+
+    </div>
+
+    <div class="card-option mdl-shadow--3dp">
+
+         <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-cogs" aria-hidden="true"></i> Options</h4>
+        </div>
+
+        <form action={{ path_for('admin') }} method="post" autocomplete="off">
+
+            {{ csrf.field | raw }}
+
+            <div class="content-center mdl-textfield--floating-label mdl-textfield mdl-js-textfield">
+            <textarea name="config:passage_list" cols="60" rows="10" class="mdl-textfield__input" type="text" id="passage-conf"></textarea>
+                <label class="mdl-textfield__label" for="passage-conf">Passage configuration</label>
+            </div>
+
+            <button type="submit" class="content-center mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Appliquer</button>
+            
+            <br>
+
+        </form>
+  
+    </div>
+
+</section>
+
+{% endblock content %}

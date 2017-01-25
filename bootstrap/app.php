@@ -17,8 +17,8 @@ $app = new \Slim\App([
             'driver' => 'mysql',
             'host' => 'localhost',
             'database' => 'oxygen',
-            'username' => '',
-            'password' => '',
+            'username' => 'YOUR_DB_USERNAME',
+            'password' => 'YOUR_DB_PASSWORD',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => ''
@@ -38,6 +38,10 @@ $container['db'] = function ($container) use ($capsule) {
     return $capsule;
 };
 
+$container['auth'] = function ($c) {
+    return new \App\Modules\Auth;
+};
+
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig( dirname(__DIR__) .'/app/Views/', [
         'cache' => false,
@@ -47,13 +51,15 @@ $container['view'] = function ($container) {
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
 
+    $view->getEnvironment()->addGlobal( 'auth', $container->auth );
+    //$view->getEnvironment()->addGlobal( 'config', $container->config );
+
     return $view;
 };
 
 $container['csrf'] = function ($c) {
     return new \Slim\Csrf\Guard;
 };
-
 
 //Middleware
 

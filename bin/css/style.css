@@ -80,6 +80,23 @@ p, h1, h2, h3, h4, h5, h6 {margin: 0;}
 	margin: 25px auto;
 }
 
+.card-text {
+    width: 100%;
+    height: auto;
+    margin: 15px auto;
+    background: #fff;
+}
+
+.card-option {
+    min-width: 200px;
+    width: 85%;
+    max-width: 550px;
+    height: auto;
+    margin: 50px auto;
+    background: #fff;
+    overflow: visible;
+}
+
 .list-card-wide {
     width: 92%;
 	max-width: 512px;
@@ -94,6 +111,11 @@ p, h1, h2, h3, h4, h5, h6 {margin: 0;}
 
 .img-welcome {
 	background: url('../img/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+
+.img-dog {
+    background: url('../img/dogball.png') bottom right 60px no-repeat #2A55C5;
+    background-size: 30%;
 }
 
 .img-cake {
@@ -159,7 +181,7 @@ div.center-div {
 }
 
 section.section--block {
-    margin: 30px 25px;
+    margin: 30px 1em;
 }
 
 p.subtitle {
@@ -176,8 +198,7 @@ p.subtitle {
     margin: 2.5px;
 }
 
-.section-title {
-    margin: 5px 0 10px;
+section.section-title {
     color: #616161;
 }
 
@@ -242,4 +263,47 @@ hr {
 
 .bold {
 	font-weight: bold;
+}
+
+/*================================
+		  * LIST *
+================================*/
+
+.container {  
+    top: 50%;
+    left: 50%;  
+    margin: auto;
+}
+
+.list-item { 
+    margin: 0 auto 10px; 
+    top: 0;
+    left: 0;  
+    height: 90px;
+    width: 100%;  
+}
+
+.item-content {
+    height: 100%;
+    border: 0px solid rgba(123, 123, 123, 0.498039);
+    border-radius: 4px;
+    color: black;
+    line-height: 90px;
+    padding-left: 32px;
+    font-size: 1.5em;
+    font-weight: 400;
+    background-color: white;
+}
+
+.form-container {
+    max-width: 300px;
+    margin: auto;
+}
+
+.full-element {
+    width: 100% !important;
+}
+
+textarea {
+    padding: 10px; 
 }

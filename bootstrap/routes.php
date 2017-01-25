@@ -1,31 +1,45 @@
 <?php
 
+use App\Middleware\AuthMiddleware;
+
 //INDEX
-$app->GET( '/', \App\Controllers\PagesController::class . ':Index' );
+$app->GET( '/', \App\Controllers\PagesController::class . ':Index' )->setName( 'index' );
 
 
 //AUTH SYSTEM
 
 //LOGIN => GET method
-$app->GET( '/user/login', \App\Controllers\AuthController::class . ':Login' )->setName( 'login' );
+$app->GET( '/auth/login', \App\Controllers\AuthController::class . ':SignIn' )->setName( 'login' );
 
 //LOGIN => POST method
-$app->POST( '/user/login', \App\Controllers\AuthController::class . ':PostLogin' );
+$app->POST( '/auth/login', \App\Controllers\AuthController::class . ':PostSignIn' );
 
 //LOGOUT
-$app->GET( '/user/logout', \App\Controllers\AuthController::class . ':Logout' )->setName( 'logout' );
+$app->GET( '/auth/logout', \App\Controllers\AuthController::class . ':Logout' )->setName( 'logout' );
 
 
 //OXYGEN
 
-//HOME
-$app->GET( '/home', \App\Controllers\PagesController::class . ':Home' )->setName( 'home' );
+$app->group('', function ()
+{
+    //ROUTE PROTEGED (need to be logged)
 
-//INTERFACE => GET method
-$app->GET( '/interface', \App\Controllers\PagesController::class . ':Interface' )->setName( 'interface' );
+    //HOME
+    $this->GET( '/home', \App\Controllers\PagesController::class . ':Home' )->setName( 'home' );
 
-//INTERFACE => POST method
-$app->POST( '/interface', \App\Controllers\PostsController::class . ':PostInterface' );
+    //ADMIN BOARD
+    $this->GET( '/adminboard', \App\Controllers\AdminsController::class . ':Admin')->setName( 'admin' );
 
-//ABOUT
-$app->GET( '/about', \App\Controllers\PagesController::class . ':About' )->setName( 'about' );
+    //ADMIN BOARD => POST method
+    $this->POST( '/adminboard', \App\Controllers\AdminsController::class . ':PostAdmin');
+
+    //INTERFACE => GET method
+    $this->GET( '/interface', \App\Controllers\PagesController::class . ':Interface' )->setName( 'interface' );
+
+    //INTERFACE => POST method
+    $this->POST( '/interface', \App\Controllers\PostsController::class . ':PostInterface' );
+
+    //ABOUT
+    $this->GET( '/about', \App\Controllers\PagesController::class . ':About' )->setName( 'about' );
+
+})->add( new AuthMiddleware( $container ) );

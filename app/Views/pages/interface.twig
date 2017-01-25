@@ -6,8 +6,6 @@
 
 {% block content %}
 
-<!-- {{ _self }} -->
-
 <div class="mdl-grid">
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--4-col mdl-card card-margin mdl-shadow--8dp">
@@ -15,57 +13,110 @@
             <h2 class="mdl-card__title-text Montserrat">Oxygen Interface</h2>
         </div>
         <div class="mdl-card__supporting-text">
-            {# #} {% if passage.int >= 1 %} {% if today.passage_list[ passage.int - 1 ] is defined %} Classe en cours de passage:<br><span
-                class="bold">{{ today.passage_list[ passage.int -1 ] }}</span><br> {% else %} This is the end ... {% endif %}
-            {% if today.passage_list[ passage.int ] is defined %} Classe suivante:<br><span class="bold">{{ today.passage_list[ passage.int ] }}</span><br>            {% endif %} {% else %} Aucune classe ne passe actuellement<br><br> {% endif %}
-            <br> {% if today.passage_list[ passage.int ] is defined %}
+            {% if passage.int >= 1 %} 
+                {% if today.passage_list[ passage.int - 1 ] is defined %}
+                    Classe en cours de passage:<br><span class="bold">{{ today.passage_list[ passage.int -1 ] }}</span><br>
+                {% else %}
+                    ◔_◔
+                {% endif %}
+                
+                {% if today.passage_list[ passage.int ] is defined %}
+                    Classe suivante:<br><span class="bold">{{ today.passage_list[ passage.int ] }}</span><br>
+                {% endif %}
+
+            {% else %}
+                Aucune classe ne passe actuellement<br><br>
+            {% endif %}
+            <br> 
+            
+            {% if today.passage_list[ passage.int ] is defined %}
+
             <form action={{ path_for( 'interface') }} method="POST">
-                {{ csrf.field | raw }}
                 <button type="submit" class="content-center mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent center">
-                                {% if passage.int == 0 %}
-                                Démarrer
-                                {% elseif passage.int >= 1 %}
-                                Suivant
-                                {% endif %}
-                            </button>
+                    {% if passage.int == 0 %}
+                        Démarrer
+                    {% elseif passage.int >= 1 %}
+                        Suivant
+                    {% endif %}
+                </button>
+
+                {{ csrf.field | raw }}
+                            
             </form>
+
             {% endif %}
         </div>
     </div>
     <div class="mdl-layout-spacer"></div>
 </div>
 <section class="section--block">
-    <h4 class="section-title">Passage</h4>
-    <p class="text">
-        Consulter l'ordre de passage du {{ today.day|capitalize }} {{ today.number }} {{ today.month|capitalize }}:
-        <br><br>
-        <button id="show-passage_order" type="button" class="content-center mdl-button mdl-color-text--white mdl-color--blue-500">Ordre de passage</button>
-    </p>
+
+    <div class="card-text mdl-shadow--3dp">
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-list-ul" aria-hidden="true"></i> Passage</h4>
+        </div>
+        <div class="mdl-card--border mdl-card__supporting-text">
+
+        <p class="text">
+            Consulter l'ordre de passage du {{ today.day|capitalize }} {{ today.number }} {{ today.month|capitalize }}.
+
+            <br><br>
+
+            <button id="show-passage" type="button" class="content-center mdl-button mdl-color-text--white mdl-color--blue-500">Ordre de passage</button>
+        </p>   
+
+        </div>
+    </div>
+
 </section>
 
 <!-- DIALOG: Passage order -->
-<dialog class="mdl-dialog">
-    <h5 class="mdl-dialog__title">Ordre de passage</h5>
+<dialog class="mdl-dialog mdl-color--grey-100" id="passage-dialog">
+    <h4 class="mdl-dialog__title">Passage</h4>
+        
     <div class="mdl-dialog__content">
-        {% if today.passage_list == true %} {% for x in today.passage_list %}
-        <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content subtitle">
-                            <span class="mdl-color-text--blue bold">{{ loop.index }} -</span>&nbsp;{{ today.passage_list[loop.index0]
-            }}
-            </span>
-        </li>
-        {% endfor %} {% else %}
-        <p class="text">Aucun passage défini aujourd'hui ;)</p>
+
+    <!--
+	    Sur un template de Blake Bowen
+	    Codepen.io/osublake/pen/jrqjdy
+    -->
+
+        <section class="container">
+  
+        {% if today.passage_list %}
+
+        {% for x in today.passage_list %}
+            <div class="list-item mdl-shadow--2dp">
+                <div class="item-content">
+                    <span class="order">{{ loop.index }} - </span>{{ today.passage_list[loop.index0] }}
+                </div>
+            </div>
+        {% endfor %}    
+
+        {% else %}
+
+        <p class="text">Aucun passage aujourd'hui&nbsp;&nbsp;♪└(￣◇￣)┐♪</p>
+            
         {% endif %}
+
+  
+        </section>
+
     </div>
+            
     <div class="mdl-dialog__actions">
-        <button type="button" class="mdl-button close">Fermer</button>
+        <button type="button" class="mdl-button close"><i class="material-icons">&#xE879;</i></button>
     </div>
 
 </dialog>
+
+{% endblock content %}
+
+{% block js %}
+    
 <script type="text/javascript">
-    var dialog = document.querySelector('dialog');
-    var showDialogButton = document.querySelector('#show-passage_order');
+    var dialog = document.querySelector('#passage-dialog');
+    var showDialogButton = document.querySelector('#show-passage');
     if (!dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
     }
@@ -77,4 +128,4 @@
     });
 </script>
 
-{% endblock content %}
+{% endblock js %}

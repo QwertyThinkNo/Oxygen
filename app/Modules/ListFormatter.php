@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Modules;
 
 /**
  * Method for service functionality
@@ -28,7 +28,6 @@ class ListFormatter
 
     public static function getPassageList( $day, $WeekAorB )
     {
-
         $ini = parse_ini_file( dirname( __DIR__, 2 ) . '/configs/passageList.ini', true );
 
         if (  @is_null( $ini['WEEK ' . $WeekAorB][$day] ) )

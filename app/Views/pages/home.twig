@@ -8,7 +8,7 @@
 
 <div class="content-center demo-card-wide mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title img-wave">
-        <h2 class="mdl-card__title-text">Bonjour {{ user.name }}</h2>
+        <h2 class="mdl-card__title-text">Bonjour {{ auth.user['username'] | capitalize }} !</h2>
     </div>
     <div class="mdl-card__supporting-text">
         Que voulez-vous faire aujourd'hui ?
@@ -34,7 +34,7 @@
                 <h2 class="mdl-card__title-text">Update</h2>
             </div>
             <div class="mdl-card__supporting-text"> Checker le Github du projet pour les dernières infos, nouveautés, corrections de bugs et plus ! </div>
-            <div class="mdl-card__actions mdl-card--border"> <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Github <i class="fa fa-github-alt" aria-hidden="true"></i></a>                </div>
+            <div class="mdl-card__actions mdl-card--border"> <a href="https://github.com/QwertyThinkNo/Oxygen" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Github <i class="fa fa-github-alt" aria-hidden="true"></i></a>                </div>
         </div>
     </div>
 </div>

@@ -2,10 +2,9 @@
 
 namespace App\Controllers;
 
+use \App\Modules\ListFormatter;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-
-require '../app/Modules/ServiceCalc.php';
 
 setlocale ( LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra' );
 
@@ -84,14 +83,7 @@ class PagesController extends Controller
     public function About( Request $request, Response $response )
     {
         //PHP version verify
-        if ( version_compare( PHP_VERSION, '7.0.0' ) >= 0 )
-        {
-            $phpv = true;
-        }
-        else
-        {
-            $phpv = false;
-        }
+        $phpv = ( version_compare( PHP_VERSION, '7.0.0' ) >= 0 ) ? true : false;
 
         // Get and decode passage Json
         $appInfoJson = file_get_contents( dirname( __DIR__, 2 ) . '/data/appInfo.json' );

@@ -1,10 +1,13 @@
-{% if user.is_logged == true %}
+{% if auth.isConnected %}
 
 <a class="mdl-navigation__link" href={{ path_for('home') }}> Home</a>
 <a class="mdl-navigation__link" href={{ path_for('interface') }}> Interface</span></a>
+{% if auth.isAdmin %}
+<a class="mdl-navigation__link" href={{ path_for('admin') }}> Admin board</span></a>
+{% endif %}
 <a class="mdl-navigation__link" href={{ path_for('about') }}> Infos</a>
 <a class="mdl-navigation__link" href={{ path_for('logout') }}> Déconnexion</a>
 {% else %}
 
-<a class="mdl-navigation__link" href={{ path_for('login') }}> Connexion</a>
+<a class="mdl-navigation__link" href={{ path_for('login') }}><i class="fa fa-user-circle" aria-hidden="true"></i> Connexion</a>
 {% endif %}

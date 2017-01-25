@@ -10,29 +10,40 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 /**
  * Controller for Auths actions 
+ *
+ * @return Response
  */
 class AuthController extends Controller
 {
 
-    public function Login( Request $request, Response $response )
+    public function SignIn( Request $request, Response $response )
     {
         // Render
         $this->render( $response, 'pages/login.twig' );
     }
 
-    public function PostLogin( Request $request, Response $response )
+    public function PostSignIn( Request $request, Response $response )
     {
-        // TODO: user login
+        $username = $request->getParam( 'username' );
+        $passw = $request->getParam( 'password' );
 
-        $username = $request->getParsedBody()[ 'username' ];
-        $passw = $request->getParsedBody()[ 'password' ];
+        $auth = $this->auth->attempt( $username, $passw );
 
-        return $this->redirect( $response, 'login' );
+        if ( !$auth ) 
+        {
+           return $this->redirect( $response, 'login', 403 ); 
+        }
+        else
+        {
+            return $this->redirect( $response, 'home');
+        }
     }
 
     public function Logout( Request $request, Response $response )
     {
-        // TODO: user logout
+        $this->auth->logout();
+
+        return $this->redirect( $response, 'index' ); 
     }
 
 }

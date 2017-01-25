@@ -19,8 +19,7 @@
 
 	<!-- Stylesheet
 	============================================= -->{% block stylesheet %}
-		
-	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/normalize/normalize.css">
+
 	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/mdl/material.blue-deep_purple.min.css">
 	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/font-awesome/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/Oxygen/bin/css/style.css">
@@ -39,7 +38,7 @@
 
 </head>
 
-<body>
+<body class="mdl-color--grey-100">
 
 {% block header %}
 {% include "component/header.twig" %}
@@ -56,7 +55,9 @@
 	</main>
 </div>
 
-
+{% block js %}
+	
+{% endblock js %}
 
 </body>
 

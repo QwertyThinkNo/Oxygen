@@ -35,46 +35,106 @@
 {% block content %}
 
 <section class="section--block">
-    <h4 class="section-title">A propos ...</h4>
-    <p class="text">
-        <span class="bold">Oxygen</span> est libre, gratuit, Open source et le restera.<br> Nous encourageons l'amélioration,
-        la modification et le partage du code d'Oxygen selon la license
-        <a title="Licence publique générale GNU/GPL v3" href="https://www.gnu.org/licenses/gpl-3.0.fr.html">GNU/GPL v3</a>,
-        disponible gratuitement sur <a title="Github du projet Oxygen" href="">Github.com</a>.
-    </p>
+
+    <div class="card-text mdl-shadow--3dp">
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> A propos ...</h4>
+        </div>
+        <div class="mdl-card--border mdl-card__supporting-text">
+
+             <p class="text">
+                <span class="bold">Oxygen</span> est libre, gratuit, Open source et le restera.<br> Nous encourageons l'amélioration,
+                la modification et le partage du code d'Oxygen selon la license
+                <a title="Licence publique générale GNU/GPL v3" href="https://www.gnu.org/licenses/gpl-3.0.fr.html">GNU/GPL v3</a>,
+                disponible gratuitement sur <a title="Github du projet Oxygen" href="">Github.com</a>.
+            </p>
+
+        </div>
+    </div>
+
     <br>
-    <h4 class="section-title">Technologies</h4>
-    <p class="text">
-        <span class="bold">Oxygen</span> est codé en <a title="Hypertext Preprocessor" href="https://php.net/">PHP</a> couplé
-        avec l'excellent framework PHP <a title="Slim, a micro framework for PHP" href="https://www.slimframework.com/">Slim</a>
-        et avec le moteur de template <a title="Twig, the flexible, fast, and secure template engine for PHP" href="http://twig.sensiolabs.org/">Twig</a>
-        pour la génération des pages de ce projet ainsi que le framework CSS 
-        <a title="A front-end template that helps you build fast, modern mobile web apps." href="https://getmdl.io/">Material Design Lite</a>
-        Ce projet utilise le gestionnaire de dépendance <a title="Dependency Manager for PHP" href="https://getcomposer.org/">Composer</a>.
-    </p>
+
+    <div class="card-text mdl-shadow--3dp">
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-laptop" aria-hidden="true"></i> Technologies</h4>
+        </div>
+        <div class="mdl-card__supporting-text">
+
+             <p class="text">
+                <span class="bold">Oxygen</span> est codé en <a title="Hypertext Preprocessor" href="https://php.net/">PHP</a> couplé
+                avec l'excellent framework <a title="Slim, a micro framework for PHP" href="https://www.slimframework.com/">Slim</a>
+                et avec le moteur de template <a title="Twig, the flexible, fast, and secure template engine for PHP" href="http://twig.sensiolabs.org/">Twig</a>
+                pour la génération des pages de ce projet ainsi que le framework CSS 
+                <a title="A front-end template that helps you build fast, modern mobile web apps." href="https://getmdl.io/">Material Design Lite</a>.
+                Ce projet utilise le gestionnaire de dépendance <a title="Dependency Manager for PHP" href="https://getcomposer.org/">Composer</a>.
+            </p>
+
+        </div>
+    </div>
+
     <br>
-    <h4 class="section-title">Remerciments</h4>
-    <p class="text">
-        Merci à toute la communauté et au forum d'<a title="OpenClassrooms" href="https://openclassrooms.com/">OpenClassrooms</a>
-        pour tous leurs précieux conseils, tutos et astuces sans qui ce projet n'aurait certainement pas vu le jour.
-    </p>
+
+    <div class="card-text mdl-shadow--3dp">
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-user-o" aria-hidden="true"></i> Remerciments</h4>
+        </div>
+        <div class="mdl-card__supporting-text">
+
+            <p class="text">
+                Merci à toute la communauté et au forum d'<a title="OpenClassrooms" href="https://openclassrooms.com/">OpenClassrooms</a>
+                pour tous leurs précieux conseils, tutos et astuces sans qui ce projet n'aurait certainement pas vu le jour.<br>
+                Merci équalement à <a href="https://www.grafikart.fr/">Grafikart</a> pour ses tutos et à <a href="https://www.codecourse.com/">CodeCourse</a>
+                pour ses cours sur Slim Framework.<br>
+                Et puis merci à vous, vous qui utilisez Oxygen et qui lui avez fait confiance. Toute l'équipe vous remercie de votre confiance.
+            </p>    
+
+        </div>
+    </div>
+
     <br>
+    
     <figure class="big-i">
         <i class="material-icons mdl-color-text--green">&#xE1E2;</i>
     </figure>
-    <figcaption>
-        <p class="bold subtitle center mdl-color-text--green">Open source system<br>
+
+    <figcaption class="mdl-typography--text-center">
+        <p class="bold subtitle mdl-color-text--green">Open source system<br>
             <a title="Licence publique générale GNU" href="https://www.gnu.org/licenses/gpl-3.0.fr.html"> GNU GPLv3</a>
         </p>
     </figcaption>
+
     <br><br><br>
-    <h4 class="mdl-typography--text-center">Licenses</h4>
-    <hr>
-    <br>
-    <p class="text little-margin">Cliquer sur le bouton ci-dessous pour afficher les licenses des logiciels, projets et codes que nous utilisons pour Oxygen.</p>
-    <br>
-    <button id="show-dialog" type="button" class="content-center mdl-button">License</button>
-    <dialog class="mdl-dialog">
+
+    <div class="card-text mdl-shadow--3dp">
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-id-card-o" aria-hidden="true"></i> Licence</h4>
+        </div>
+        <div class="mdl-card__supporting-text">
+
+            <p class="text little-margin">Cliquer sur le bouton ci-dessous pour afficher les licenses des logiciels, projets et codes que nous utilisons pour Oxygen.</p>
+            
+            <br>
+            
+            <button id="show-license" type="button" class="mdl-color-text--white content-center mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect">License</button>
+
+        </div>
+    </div>
+
+    <div class="card-text mdl-shadow--3dp">
+        <div class="mdl-card__title">
+            <h4 class="section-title"><i class="fa fa-asterisk" aria-hidden="true"></i> Changelog</h4>
+        </div>
+        <div class="mdl-card__supporting-text">
+
+            <p class="text little-margin">Changement dans la version <code>{{ info.Oxygen.version }} {{ info.Oxygen.release_type | capitalize }}</code> !
+            <br>
+            
+            <button id="show-changelog" type="button" class="mdl-color-text--white content-center mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect">Changelog</button>
+
+        </div>
+    </div>    
+
+    <dialog class="mdl-dialog" id="license-dialog">
         <h5 class="mdl-dialog__title">License</h5>
         <div class="mdl-dialog__content">
             <a href="https://getmdl.io">
@@ -88,7 +148,7 @@
                                             you may not use this file except in compliance with the License.
                                             You may obtain a copy of the License at<br>
                                             <br>
-                                            http://www.apache.org/licenses/LICENSE-2.0<br>
+                                            www.apache.org/licenses/LICENSE-2.0<br>
                                             <br>
                                             Unless required by applicable law or agreed to in writing, software
                                             distributed under the License is distributed on an "AS IS" BASIS,
@@ -166,20 +226,50 @@
             <br>
         </div>
         <div class="mdl-dialog__actions">
-            <button type="button" class="mdl-button close">J'ai tout lu !</button>
+            <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect close"><i class="material-icons">&#xE879;</i></button>
         </div>
     </dialog>
+
+    <dialog class="mdl-dialog" id="changelog-dialog">
+        <h5 class="mdl-dialog__title"><i class="fa fa-asterisk" aria-hidden="true"></i>Changelog</h5>
+         <div class="mdl-dialog__content">
+
+             <code>
+                 <ul>
+                     <li>Graphical User Interface Enhancements (I added smileys).</li>
+                     <li>Added the changelog section in the "About" section.</li>
+                     <li>Added Authentification system.</li>
+                 </ul>
+             </code>
+
+         </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect close"><i class="material-icons">&#xE879;</i></button>
+        </div>
+    </dialog>
+
 </section>
 </div>
 </section>
+
 <section class="mdl-layout__tab-panel" id="technical-infos">
     <div class="page-content">
         <section class="section--block">
-            <h4 class="section-title">Informations</h4>
-            <p class="text">
-                Informations à propos de votre installation actuelle.<br> Ces informations peuvent servir dans le cadre d'un
-                déboguage ou d'un rapport d'erreur.
-            </p>
+
+            <div class="card-text mdl-shadow--3dp">
+                <div class="mdl-card__title">
+                    <h4 class="section-title"><i class="fa fa-info-circle" aria-hidden="true"></i> Informations</h4>
+                </div>
+                <div class="mdl-card__supporting-text">
+
+                <p class="text">
+                    Informations à propos de votre installation actuelle.<br> Ces informations peuvent servir dans le cadre d'un
+                    déboguage ou d'un rapport d'erreur.
+                </p>            
+                
+                </div>
+            </div>
+
             <br>
             <ul class="list-infos mdl-list">
                 <li class="mdl-list__item">
@@ -258,18 +348,33 @@
         </section>
     </div>
 </section>
+
+{% endblock content %}
+
+{% block js %}
+
 <script type="text/javascript">
-    var dialog = document.querySelector('dialog');
-    var showDialogButton = document.querySelector('#show-dialog');
-    if (!dialog.showModal) {
-        dialogPolyfill.registerDialog(dialog);
-    }
-    showDialogButton.addEventListener('click', function () {
-        dialog.showModal();
+    //License
+    var license = document.querySelector('#license-dialog');
+    var showLicenseButton = document.querySelector('#show-license');
+    
+    showLicenseButton.addEventListener('click', function () {
+        license.showModal();
     });
-    dialog.querySelector('.close').addEventListener('click', function () {
-        dialog.close();
+    license.querySelector('.close').addEventListener('click', function () {
+        license.close();
+    });
+
+    //Changelog
+    var changelog = document.querySelector('#changelog-dialog');
+    var showChangelogButton = document.querySelector('#show-changelog');
+    
+    showChangelogButton.addEventListener('click', function () {
+        changelog.showModal();
+    });
+    changelog.querySelector('.close').addEventListener('click', function () {
+        changelog.close();
     });
 </script>
 
-{% endblock content %}
+{% endblock js %}
